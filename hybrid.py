@@ -44,11 +44,17 @@ def check_anagram_of_palindrome(word):
     elif length % 2 == 0:
         for value in frequency.values():
             if value % 2 == 0:
-                return True
-            return False
+                continue
+            else:
+                return False
+        return True
     else:
+        odd_count = 0
         for value in frequency.values():
-            print(value)
-    return False
+            if odd_count > 1:
+                return False
+            elif not value % 2 == 0:
+                odd_count += 1
+        return True
 
-print(check_anagram_of_palindrome("radar"))
+# print(check_anagram_of_palindrome("repaper"))
