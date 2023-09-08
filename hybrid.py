@@ -32,16 +32,15 @@ def letter_frequency(word):
 # letter_frequency("anna") => {'a': 2, 'n': 2}
 
 def check_anagram_of_palindrome(word):
-    length = len(word)
+    if len(word) == 0:
+        return True
     frequency = {}
     for letter in word:
         if letter in frequency:
             frequency[letter] += 1
         else:
             frequency[letter] = 1
-    if length == 0:
-        return True
-    elif length % 2 == 0:
+    if len(word) % 2 == 0:
         for value in frequency.values():
             if value % 2 == 0:
                 continue
